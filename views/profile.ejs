@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Throw Track App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throw Track App</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="counter-container">
+      <h1 id="pitch-count"><%= pitchCount || 0 %></h1>
+      <div class="button-container">
+        <button onclick="decrementCount()" class="counter-button">-</button>
+        <button onclick="incrementCount()" class="counter-button">+</button>
+      </div>
+    </div>
+  
+    <!-- Strike Zone Layout -->
+    <div class="strikezone-container">
+      <h2>Strike Zone</h2>
+      <div class="strikezone">
+        <!-- Strike zone grid -->
+        <% for (let y = 1; y <= 3; y++) { %>
+          <div class="strikezone-row">
+            <% for (let x = 1; x <= 3; x++) { %>
+              <div class="strikezone-box" data-x="<%= x %>" data-y="<%= y %>"></div>
+            <% } %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  
+    <!-- End Session Button -->
+    <div class="end-session-container">
+      <button onclick="endSession()" class="end-session-button">End Session/Inning</button>
+    </div>
+  
+    <script src="js/main.js"></script>
+  </body>
+  </html>
+  
